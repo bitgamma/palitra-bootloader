@@ -168,8 +168,8 @@ ROM USB_DEV_DSC device_dsc=
     0x00,                   // Subclass code
     0x00,                   // Protocol code
     EP0_BUFF_SIZE,          // Max packet size for EP0, see usb_config.h
-    0x04D8,                 // Vendor ID: Microchip
-    0x003C,                 // Product ID: HID Bootloader
+    0x1209,                 // Vendor ID
+    0x0BAC,                 // Product ID
     0x0101,                 // Device release number in BCD format
     0x01,                   // Manufacturer string index
     0x02,                   // Product string index
@@ -234,15 +234,13 @@ ROM uint8_t CFG01[CONFIG_DESC_TOTAL_LEN]={
 ROM struct{uint8_t bLength;uint8_t bDscType;uint16_t string[1];}sd000={
 sizeof(sd000),DSC_STR,0x0409};
 
-ROM struct{uint8_t bLength;uint8_t bDscType;uint16_t string[25];}sd001={
+ROM struct{uint8_t bLength;uint8_t bDscType;uint16_t string[11];}sd001={
 sizeof(sd001),DSC_STR,
-'M','i','c','r','o','c','h','i','p',' ',
-'T','e','c','h','n','o','l','o','g','y',' ','I','n','c','.'};
+'B','i','t','g','a','m','m','a',' ','O','U'};
 
 ROM struct{uint8_t bLength;uint8_t bDscType;uint16_t string[18];}sd002={
 sizeof(sd002),DSC_STR,
-'H','I','D',' ','U','S','B',' ','B','o','o',
-'t','l','o','a','d','e','r'};
+'P','a','l','i','t','r','a',' ','B','o','o','t','l','o','a','d','e','r'};
 
 ROM uint8_t hid_rpt01[HID_RPT01_SIZE]=
 //  First byte in each row is the "item".  First byte's two least significant
